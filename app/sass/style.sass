@@ -148,14 +148,13 @@ nav
         transform: translateX(-2500px) !important
         transition: 0.4s ease
     .side-on
-        transform: translateX(0px) !important
+        transform: translateX(0px) 
         transition: 0.7s ease
-    .level-price
-        
         &:first-child
             transform: translateX(17px)
         &:last-child
             transform: translateX(-17px)
+    .level-price
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -276,10 +275,16 @@ nav
         align-items: center                
     .level-price
         margin-bottom: 10px
-        &:last-child,&:first-child
-            transform: translate(0px) 
     .active-level-price
-        transform: translate(0px) !important        
+        transform: translate(0px) !important     
+
+    .side-on
+        transform: translateX(0px) 
+        transition: 0.7s ease
+        &:first-child
+            transform: translateX(0px) !important
+        &:last-child
+            transform: translateX(0px) !important
 
 @media ( max-width: 740px )
     .logo

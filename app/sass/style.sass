@@ -74,6 +74,31 @@ nav
             transform: scale(1.3) translateX(5px)
             transition: 0.4s ease
             cursor: pointer
+    .div-name-logo
+        position: relative
+    .arr-down
+        display: none
+    .div-drop-down
+        left: -15px
+        position: absolute
+        z-index: 5
+        background: #36603E
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.3)
+        padding: 0px 10px
+        width: 85px
+        border-radius: 7px
+        border: 1px solid white
+        border-top: none
+        li
+            margin: 5px 0
+            padding: 5px
+            border-radius: 7px
+            transition: 0.4s ease
+            &:hover
+                cursor: pointer
+                background: white
+                color: #6A994E 
+                transition: 0.4s ease
     .navigation
         display: flex
         justify-content: space-between
@@ -113,6 +138,15 @@ nav
                         border: 1px solid white
                         background: #6A994E
                         transition: 0.5s ease
+
+.div-block
+            position: absolute
+            background: rgba(0, 0, 0, 0)
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            z-index: 3
 
 .title
     display: flex
@@ -287,10 +321,23 @@ nav
             transform: translateX(0px) !important
 
 @media ( max-width: 740px )
+    .div-drop-down
+        top: 20px
+    .div-name-logo
+        display: flex  
+    .arr-down
+        display: inline-block !important
+        width: 1px 
+        padding: 0px 7px
+        transform: rotate(135deg) translateX(-3px) translateY(0px) scale(0.4)
+        border-top: 2px solid white
+        border-right: 2px solid white
     .logo
         padding: 0px 10px
         width: 140px !important
         margin-right: 0px !important
+    
+
     .navigation
         display: flex
         justify-content: flex-end !important

@@ -2,6 +2,7 @@ const valutes = document.querySelectorAll(".valute");
 const courseValue = document.querySelectorAll(".course");
 const times = document.querySelectorAll(".time");
 const prices = document.querySelectorAll(".level-price");
+const nameLogo = document.querySelector(".name-logo");
 
 async function removeClass(data) {
   data.classList.remove("side-off");
@@ -83,3 +84,45 @@ for (let i of times) {
     }
   });
 }
+
+nameLogo.addEventListener("click", function () {
+  if (document.querySelector(".div-block") == null) {
+    const divLogo = document.querySelector(".div-name-logo");
+
+    divBlock = document.createElement("div");
+    divBlock.classList.add("div-block");
+    divBlock.addEventListener("click", function () {
+      document.querySelector(".div-drop-down").remove();
+      divBlock.remove();
+    });
+    document.querySelector(".app").append(divBlock);
+
+    const div = document.createElement("div");
+    div.classList.add("div-drop-down");
+
+    const ul = document.createElement("ul");
+    ul.classList.add("list-drop-down");
+
+    function createItem(data) {
+      const li = document.createElement("li");
+      li.classList.add("item-drop-down");
+      li.textContent = data;
+      li.addEventListener("click", function () {
+        document.querySelector(".div-drop-down").remove();
+        divBlock.remove();
+      });
+
+      ul.append(li);
+    }
+
+    createItem("About Us");
+    createItem("Features");
+    createItem("Pricing");
+    createItem("Product");
+    createItem("Contact");
+
+    div.append(ul);
+
+    divLogo.append(div);
+  }
+});
